@@ -48,7 +48,7 @@ void main(List<String> arguments) async {
       if (validation != null) {
         if (validationStatus == validationEnum.success) {
           return Response.ok(
-            'Credentials found and matched successfully!',
+            'logged in successfully!',
             headers: {
               'Content-Type': 'application/json',
               ...corsHeaders,
@@ -57,14 +57,6 @@ void main(List<String> arguments) async {
         } else if (validationStatus == validationEnum.invalidEmail) {
           return Response.ok(
             'Email address not found or Incorrect email address!',
-            headers: {
-              'Content-Type': 'application/json',
-              ...corsHeaders,
-            },
-          );
-        } else if (validationStatus == validationEnum.invalidPassword) {
-          return Response.ok(
-            'Incorrect password!',
             headers: {
               'Content-Type': 'application/json',
               ...corsHeaders,
